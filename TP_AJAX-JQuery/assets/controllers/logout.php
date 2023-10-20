@@ -1,1 +1,1 @@
-<?php session_start();session_destroy();header('Location: \Exercice_AJAX-JQuery\TP_AJAX-JQuery\index.php');exit();?>
+<?php session_unset();session_destroy();header('Location: \Exercice_AJAX-JQuery\TP_AJAX-JQuery\index.php');exit();?>
