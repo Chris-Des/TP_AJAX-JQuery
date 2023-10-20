@@ -1,18 +1,21 @@
 $(document).ready(() => {
-  // Vérifier si l'utilisateur est connecté en vérifiant la variable de session 'username'
-  const isLoggedIn = Boolean("<?php echo isset($_SESSION['username']) ?>");
+  // Check if the user is logged in by checking the 'username' session variable
+  const isLoggedIn = Boolean("<?php echo isset($_SESSION['username']) ?>");
 
-  // Sélectionner le bouton "Espace Client"
-  const espaceClientBtn = $("#espaceClient");
+  // Select the "Espace Client" button
+  const espaceClientBtn = $("#espaceClient");
 
-  // Désactiver le bouton si l'utilisateur n'est pas connecté
-  if (!isLoggedIn) {
-    espaceClientBtn.prop("disabled", true);
-  }
+  // Disable the button if the user is not logged in
+  if (!isLoggedIn) {
+    espaceClientBtn.prop("disabled", true);
+  } else {
+    // Automatically redirect the user to the client space page
+    window.location.href = "./assets/pages/espace.php";
+  }
 
-  // Gérer le clic sur le bouton "Espace Client" si l'utilisateur est connecté
-  espaceClientBtn.click(() => {
-    // Rediriger l'utilisateur vers la page de l'espace client
-    window.location.href = "./assets/pages/espace.php";
-  });
+  // Handle click on the "Espace Client" button if the user is logged in
+  espaceClientBtn.click(() => {
+    // Redirect the user to the client space page
+    window.location.href = "./assets/pages/espace.php";
+  });
 });
