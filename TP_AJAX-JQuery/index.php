@@ -13,22 +13,7 @@
     <div class="principal">
         <?php include './assets/components/TheHeader.php';?>
 
-        <div class="content container-fluid">
-            <div class="row justify-content-center w-100">
-                <div class="col-12 col-md-8 col-lg-6">
-                    <h1 class="text-center">Bonjour, et bienvenue sur le Blog SJT</h1>
-
-                    <div class="text-center my-4">
-                        <h2>Inscrivez-vous</h2>
-                        <button id="inscription" class="btn btn-primary">Inscription</button>
-                    </div>
-                    <div class="text-center my-4">
-                        <h2>Connectez-vous</h2>
-                        <button id="connexion" class="btn btn-primary">Connexion</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php include './assets/pages/bienvenue.php';?>
 
         <?php include './assets/components/TheFooter.php';?>
     </div>

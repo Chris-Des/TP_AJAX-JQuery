@@ -1,18 +1,19 @@
 $(document).ready(() => {
+  // When the "connexionForm" form is submitted
   $("#connexionForm").submit((event) => {
     event.preventDefault();
 
-    // Récupérer les données du formulaire
+    // Get the form data
     const identifier = $("#identifier").val();
     const password = $("#password").val();
 
-    // Validation côté client
+    // Client-side validation
     if (!identifier || !password) {
-      alert("Veuillez remplir tous les champs.");
+      alert("Please fill in all fields.");
       return;
     }
 
-    // Envoyer les données du formulaire via AJAX
+    // Send the form data via AJAX
     $.ajax({
       type: "GET",
       url: "../controllers/get.php",
@@ -21,14 +22,14 @@ $(document).ready(() => {
         password,
       },
       success(response) {
-        // Afficher la réponse du serveur
+        // Display the server response
         console.log(response);
-        alert("Authentification réussie !");
+        alert("Authentication successful!");
         window.location.href = "../pages/espace.php";
       },
       error() {
-        // Afficher un message d'erreur
-        alert("Une erreur s'est produite lors de l'authentification.");
+        // Display an error message
+        alert("An error occurred during authentication.");
       },
     });
   });

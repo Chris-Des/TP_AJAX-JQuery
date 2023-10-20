@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-
+    <script src="../JS/router.js"></script>
     <title>Inscription</title>
 </head>
 <body>
   <div class="principal">
-    <?php include '../components/TheHeader.php';?>
+    <?php include '../components/TheHeader.php'; ?>
     <div class="content container">
         <h1 class="mt-5">Formulaire d'inscription</h1>
         <form id="inscriptionForm" action="" method="POST">
@@ -53,7 +53,7 @@
         <div id="error-message" style="display: none;"></div>
     </div>
     
-    <?php include '../components/TheFooter.php';?>
+    <?php include '../components/TheFooter.php'; ?>
     </div>
     <script src="../JS/inscription.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
