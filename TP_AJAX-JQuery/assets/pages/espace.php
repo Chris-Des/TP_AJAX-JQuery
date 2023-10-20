@@ -3,9 +3,9 @@ session_start();
 
 // Vérifiez si l'utilisateur est connecté
 if (!isset($_SESSION['username'])) {
-    // Redirigez l'utilisateur vers la page d'accueil
-    header("Location: \Exercice_AJAX-JQuery\TP_AJAX-JQuery\index.php");
-    exit(); // Assurez-vous de terminer le script après la redirection
+  // Redirigez l'utilisateur vers la page d'accueil
+  header('Location: \Exercice_AJAX-JQuery\TP_AJAX-JQuery\index.php');
+  exit(); // Assurez-vous de terminer le script après la redirection
 }
 ?>
 <!DOCTYPE html>
@@ -16,11 +16,10 @@ if (!isset($_SESSION['username'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="../JS/router.js"></script>
-    <script src="../JS/script.js"></script>
     <title>Espace utilisateur</title>
 </head>
 <body class="vh-100">
-    <?php include '../components/TheHeader.php';?>
+    <?php include '../components/TheHeader.php'; ?>
     <h1 class="text-center">Espace utilisateur</h1>
     <p class="text-center">Bienvenue sur votre espace utilisateur.</p>
     <div class="text-center">
@@ -33,7 +32,8 @@ if (!isset($_SESSION['username'])) {
             <button type="submit" class="btn btn-primary">Déconnexion</button>
         </form>
     </div>
-    <?php include '../components/TheFooter.php';?>
+    <p id="countdownMessage"></p>
+    <?php include '../components/TheFooter.php'; ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
