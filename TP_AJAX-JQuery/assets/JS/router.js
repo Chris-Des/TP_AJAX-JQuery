@@ -15,20 +15,41 @@ $(document).ready(() => {
     window.location.href = "/Exercice_AJAX-JQuery/TP_AJAX-JQuery/index.php";
   });
 
-  // Check if the user is logged in by checking the 'username' session variable
-  const isLoggedIn = Boolean("<?php echo isset($_SESSION['username']) ?>");
-
   // Select the "Espace Client" button
   const espaceClientBtn = $("#espaceClient");
-
-  // Disable the button if the user is not logged in
-  if (isLoggedIn) {
-    espaceClientBtn.prop("disabled", true);
-  }
 
   // Handle click on the "Espace Client" button if the user is logged in
   espaceClientBtn.click(() => {
     // Redirect the user to the "espace.php" page
     window.location.href = "./assets/pages/espace.php";
+  });
+  // Sélectionnez le formulaire de déconnexion
+  const logoutForm = $('form[action="../controllers/logout.php"]');
+
+  // Lorsque le formulaire de déconnexion est soumis
+  logoutForm.submit((e) => {
+    // Empêcher le comportement par défaut du formulaire
+    e.preventDefault();
+
+    // Désactivez le bouton de déconnexion
+    $('button[type="submit"]').prop('disabled', true);
+
+    // Déclarez la variable countdown à l'extérieur de la fonction setInterval
+    let countdown = 5; // Compte à rebours initial en secondes
+
+    // Affichez le compte à rebours
+    const countdownInterval = setInterval(() => {
+      // Affichez le message de compte à rebours
+      $('#countdownMessage').text(`Vous serez déconnecté dans ${countdown} secondes.`);
+
+      // Décrémentez le compte à rebours
+      countdown--;
+
+      // Si le compte à rebours atteint 0, redirigez vers l'index
+      if (countdown === 0) {
+        clearInterval(countdownInterval); // Arrêtez le compte à rebours
+        logoutForm[0].submit(); // Soumettez le formulaire de déconnexion
+      }
+    }, 1000); // Exécutez toutes les 1000 millisecondes (1 seconde)
   });
 });

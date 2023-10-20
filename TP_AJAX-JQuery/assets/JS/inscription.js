@@ -1,5 +1,4 @@
 $(document).ready(() => {
-  let invalidTimeout = null;
   const emailField = $('#email'); // Field for email input
   const passwordField = $('#password'); // Field for password input
   const usernameField = $('#username'); // Field for username input
@@ -47,14 +46,6 @@ $(document).ready(() => {
   // Event listener for the email field input
   emailField.on('input', () => {
     const email = emailField.val(); // Get the value of the email field
-    clearTimeout(invalidTimeout);
-    if (isValidEmail(email)) {
-      emailField.removeClass('invalid'); // Remove the "invalid" class from the email field
-    } else {
-      invalidTimeout = setTimeout(() => {
-        emailField.addClass('invalid'); // Add the "invalid" class to the email field
-      }, 300);
-    }
     checkFormValidity(); // Check the form validity
   });
 
@@ -68,14 +59,6 @@ $(document).ready(() => {
   // Event listener for the username field input
   usernameField.on('input', () => {
     const username = usernameField.val(); // Get the value of the username field
-    clearTimeout(invalidTimeout);
-    if (isValidUsername(username)) {
-      usernameField.removeClass('invalid'); // Remove the "invalid" class from the username field
-    } else {
-      invalidTimeout = setTimeout(() => {
-        usernameField.addClass('invalid'); // Add the "invalid" class to the username field
-      }, 300);
-    }
     updateUsernameRequirements(username); // Update the username requirements display
     checkFormValidity(); // Check the form validity
   });
