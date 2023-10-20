@@ -9,7 +9,7 @@ $(document).ready(() => {
 
     // Client-side validation
     if (!identifier || !password) {
-      alert("Please fill in all fields.");
+      alert("Veuillez entrer un identifiant et un mot de passe.");
       return;
     }
 
@@ -24,12 +24,12 @@ $(document).ready(() => {
       success(response) {
         // Display the server response
         console.log(response);
-        alert("Authentication successful!");
+        alert("Authentification réussie !");
         window.location.href = "../pages/espace.php";
       },
       error() {
         // Display an error message
-        alert("An error occurred during authentication.");
+        alert("Authentification echouée !");
       },
     });
   });
